@@ -1,0 +1,510 @@
+{
+  "$id": "https://vda231-301.github.io/schemas/VDA_275/VDA_231-301_VDA_275_2021_Formaldehyde_v0.1.0.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "VDA 275 Formaldehyde Emission Testing Schema",
+  "description": "JSON Schema for VDA 275 - Moulded Composites and Fleeces for Vehicles - Determination of Formaldehyde release using the modified flask method. Supports both Variant A (DNPH/HPLC) and Variant B (Acetylacetone/UV-Vis). Test report requirements per VDA 275 Section 9.",
+  "allOf": [
+    {
+      "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json"
+    },
+    {
+      "properties": {
+        "TestSeries": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/VDA275.BranchingTestSeries"
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "VDA275.BranchingTestSeries": {
+      "type": "object",
+      "if": {
+        "properties": {
+          "TestType": {
+            "const": "VDA 275 Formaldehyde Emission"
+          }
+        }
+      },
+      "then": {
+        "$ref": "#/$defs/VDA275.TestSeries"
+      },
+      "else": {
+        "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.TestSeries"
+      }
+    },
+    "VDA275.TestSeries": {
+      "type": "object",
+      "description": "Test series for VDA 275 formaldehyde emission testing. Test variant (A or B) is specified via Specification.FeatureText and FeatureList. Test report requirements per VDA 275 Section 9.",
+      "properties": {
+        "_id": {
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.Identifier"
+        },
+        "_type": {
+          "const": "TestSeries"
+        },
+        "Specification": {
+          "$ref": "#/$defs/VDA275.Specification",
+          "description": "VDA 275 specification with test variant indicated via FeatureText and FeatureList"
+        },
+        "TestType": {
+          "const": "VDA 275 Formaldehyde Emission"
+        },
+        "ComponentMasterID": {
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.Identifier"
+        },
+        "AdditionalInformation": {
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.InformationSet",
+          "description": "Optional additional test parameters (calibration data, instrument settings, etc.)"
+        },
+        "NumberOfExecutions": {
+          "type": "integer",
+          "minimum": 1,
+          "default": 6,
+          "description": "Number of test executions (typically 5 for FA + 1 for moisture)"
+        },
+        "Assessment": {
+          "type": "string",
+          "description": "Overall assessment (PASS/FAIL)"
+        },
+        "PredecessorId": {
+          "oneOf": [
+            {
+              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.Identifier"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "SuccessorId": {
+          "oneOf": [
+            {
+              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.Identifier"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "TestingCenter": {
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.TestingCenter",
+          "description": "Testing laboratory with name, address, and responsible person (Section 9 requirements)"
+        },
+        "Comment": {
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.RestrictedText",
+          "description": "Deviations from test procedure and peculiarities during test (Section 9)"
+        },
+        "Executions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/VDA275.TestExecution"
+          },
+          "description": "Individual test executions including FA measurements and moisture determination"
+        },
+        "ConsolidatedCharacteristicValues": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/VDA275.ConsolidatedCharacteristicValue"
+          },
+          "description": "FA emission (mg/kg atro) and moisture content (%) - Section 9 requirements"
+        },
+        "TargetCharacteristicValues": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/VDA275.TargetCharacteristicValue"
+          },
+          "description": "Predetermined limit value (Section 9 requirement)"
+        }
+      },
+      "required": [
+        "_id",
+        "_type",
+        "Specification",
+        "TestType",
+        "ComponentMasterID",
+        "NumberOfExecutions",
+        "PredecessorId",
+        "SuccessorId",
+        "TestingCenter",
+        "Executions",
+        "ConsolidatedCharacteristicValues",
+        "TargetCharacteristicValues"
+      ]
+    },
+    "VDA275.Specification": {
+      "type": "object",
+      "description": "VDA 275 specification with test variant. FeatureText and FeatureList indicate Variant A (DNPH/HPLC) or Variant B (Acetylacetone/UV-Vis).",
+      "properties": {
+        "Authority": {
+          "const": "VDA"
+        },
+        "Type": {
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.RestrictedString"
+        },
+        "Number": {
+          "const": "275"
+        },
+        "SubNumber": {
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.RestrictedString"
+        },
+        "IssueDate": {
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.DateMonth"
+        },
+        "Title": {
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.LongString"
+        },
+        "FeatureText": {
+          "type": "string",
+          "enum": ["Variant A", "Variant B"],
+          "description": "Test variant: Variant A (DNPH/HPLC at 362nm) or Variant B (Acetylacetone/UV-Vis at 412nm)"
+        },
+        "FeatureList": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["A", "B"]
+          },
+          "minItems": 1,
+          "maxItems": 1,
+          "description": "Test variant identifier: A or B"
+        },
+        "DOI": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "Type",
+        "Number",
+        "IssueDate",
+        "FeatureText",
+        "FeatureList"
+      ],
+      "additionalProperties": false
+    },
+    "VDA275.TestExecution": {
+      "type": "object",
+      "description": "Test execution for VDA 275 with required Extraction information (sampling/packaging timing per Section 9)",
+      "properties": {
+        "_id": {
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.Identifier"
+        },
+        "_type": {
+          "const": "TestExecution"
+        },
+        "Designation": {
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.RestrictedString"
+        },
+        "Numerator": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "Tester": {
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.Person"
+        },
+        "StartTime": {
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.Date"
+        },
+        "MeasurementSystems": {
+          "type": "array",
+          "items": {
+            "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.MeasurementSystem"
+          }
+        },
+        "RawData": {
+          "type": "array",
+          "items": {
+            "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.InformationSet"
+          }
+        },
+        "SingleResults": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/VDA275.SingleResultPoint"
+          }
+        },
+        "Specimen": {
+          "$ref": "#/$defs/VDA275.Specimen"
+        },
+        "TestParameters": {
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.InformationSet"
+        }
+      },
+      "required": [
+        "_id",
+        "_type",
+        "Designation",
+        "Numerator",
+        "Specimen",
+        "MeasurementSystems",
+        "SingleResults"
+      ],
+      "additionalProperties": false
+    },
+    "VDA275.Specimen": {
+      "type": "object",
+      "description": "VDA 275 specimen with required Extraction (sampling/packaging timing and details per Section 9)",
+      "properties": {
+        "_id": {
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.Identifier"
+        },
+        "_type": {
+          "const": "Specimen"
+        },
+        "Designation": {
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.LongString"
+        },
+        "Flagging": {
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.RestrictedString"
+        },
+        "Comment": {
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.RestrictedText"
+        },
+        "ComponentInstanceID": {
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.Identifier"
+        },
+        "Attachment": {
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.Attachment",
+          "description": "Photo documentation if requested by client (Section 9)"
+        },
+        "AdditionalProperties": {
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.InformationSet",
+          "description": "Specimen dimensions (Length, Width, Thickness), Mass, Type"
+        },
+        "Extraction": {
+          "$ref": "#/$defs/VDA275.Extraction",
+          "description": "Required: Sampling/packaging timing and details (Section 9)"
+        },
+        "ProcessHistory": {
+          "type": "array",
+          "items": {
+            "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.ProcessStep"
+          },
+          "description": "Special features of production (additional drying, changed parameters - Section 9)"
+        }
+      },
+      "required": [
+        "_id",
+        "_type",
+        "ComponentInstanceID",
+        "Designation",
+        "Extraction"
+      ],
+      "additionalProperties": false
+    },
+    "VDA275.Extraction": {
+      "type": "object",
+      "description": "Extraction/sampling information with required Date (Section 9: timing of sampling and packaging)",
+      "properties": {
+        "_id": {
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.Identifier"
+        },
+        "_type": {
+          "const": "Extraction"
+        },
+        "Position": {
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.RestrictedString",
+          "description": "Sampling position on the component"
+        },
+        "Specification": {
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.Specification",
+          "description": "Sampling/packaging specification"
+        },
+        "Method": {
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.RestrictedString",
+          "description": "Sampling method"
+        },
+        "Date": {
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.Date",
+          "description": "Required: Date of sampling/packaging (Section 9)"
+        },
+        "Comment": {
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.RestrictedText",
+          "description": "Details of packaging, storage and transport (Section 9)"
+        },
+        "Attachment": {
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.Attachment"
+        }
+      },
+      "required": [
+        "_id",
+        "_type",
+        "Method",
+        "Position",
+        "Specification",
+        "Date"
+      ],
+      "additionalProperties": false
+    },
+    "VDA275.SingleResultPoint": {
+      "type": "object",
+      "description": "Single result point for VDA 275 measurements (same format for both variants)",
+      "allOf": [
+        {
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.InformationPoint"
+        },
+        {
+          "properties": {
+            "_id": {
+              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.Identifier"
+            },
+            "_type": {
+              "const": "SingleResultPoint"
+            },
+            "Property": {
+              "type": "string",
+              "enum": [
+                "Formaldehyde Emission",
+                "Moisture Content",
+                "Peak Area",
+                "Absorbance"
+              ],
+              "description": "Measurement type"
+            },
+            "Symbol": {
+              "type": "string",
+              "enum": ["FA", "H", "AS", "E"],
+              "description": "FA=Formaldehyde, H=Moisture, AS=Peak Area, E=Absorbance"
+            },
+            "Value": {
+              "type": "number",
+              "minimum": 0
+            },
+            "Unit": {
+              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.Unit"
+            },
+            "Comment": {
+              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.RestrictedText"
+            },
+            "Attachment": {
+              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.Attachment"
+            }
+          }
+        }
+      ],
+      "required": ["_id", "_type", "Property", "Value", "Unit"],
+      "unevaluatedProperties": false
+    },
+    "VDA275.ConsolidatedCharacteristicValue": {
+      "type": "object",
+      "description": "Consolidated result: FA emission (mg/kg atro) or Moisture content (%) per Section 9",
+      "allOf": [
+        {
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.InformationPoint"
+        },
+        {
+          "properties": {
+            "_id": {
+              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.Identifier"
+            },
+            "_type": {
+              "const": "ConsolidatedCharacteristicValue"
+            },
+            "Property": {
+              "type": "string",
+              "enum": ["Formaldehyde Emission", "Moisture Content"]
+            },
+            "Symbol": {
+              "type": "string",
+              "enum": ["FA", "H"]
+            },
+            "Value": {
+              "type": "number",
+              "minimum": 0
+            },
+            "Unit": {
+              "type": "string",
+              "enum": ["mg/kg atro", "%"]
+            },
+            "Aggregation": {
+              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.RestrictedString"
+            },
+            "SingleResultIDs": {
+              "type": "array",
+              "items": {
+                "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.Identifier"
+              }
+            },
+            "Comment": {
+              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.RestrictedText"
+            },
+            "CriterionType": {
+              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.RestrictedString"
+            },
+            "Attachment": {
+              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.Attachment"
+            }
+          }
+        }
+      ],
+      "required": [
+        "_id",
+        "_type",
+        "Property",
+        "Value",
+        "Unit",
+        "Aggregation"
+      ],
+      "unevaluatedProperties": false
+    },
+    "VDA275.TargetCharacteristicValue": {
+      "type": "object",
+      "description": "Predetermined limit value for FA emission (Section 9 requirement)",
+      "allOf": [
+        {
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.InformationPoint"
+        },
+        {
+          "properties": {
+            "_id": {
+              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.Identifier"
+            },
+            "_type": {
+              "const": "ConsolidatedCharacteristicValue"
+            },
+            "Property": {
+              "const": "Formaldehyde Emission"
+            },
+            "Symbol": {
+              "const": "FA"
+            },
+            "Value": {
+              "type": "number",
+              "minimum": 0
+            },
+            "Unit": {
+              "const": "mg/kg atro"
+            },
+            "Aggregation": {
+              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.RestrictedString"
+            },
+            "CriterionType": {
+              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.RestrictedString"
+            },
+            "Comment": {
+              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.RestrictedText"
+            },
+            "Attachment": {
+              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.Attachment"
+            }
+          }
+        }
+      ],
+      "required": [
+        "_id",
+        "_type",
+        "Property",
+        "Value",
+        "Unit",
+        "Aggregation"
+      ],
+      "unevaluatedProperties": false
+    }
+  }
+}

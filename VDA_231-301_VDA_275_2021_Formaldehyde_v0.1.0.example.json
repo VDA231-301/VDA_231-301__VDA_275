@@ -1,0 +1,596 @@
+{
+  "_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "_type": "TestingProject",
+  "_schemaVersion": "1.0.0",
+  "Title": "Formaldehyde Emission Test - Dashboard Trim Cover",
+  "Client": {
+    "_id": "c1d2e3f4-5678-90ab-cdef-123456789abc",
+    "_type": "Location",
+    "Identification": [
+      {
+        "Identifier": "OEM-12345",
+        "Type": "Customer ID"
+      }
+    ],
+    "Name": "Premium Automotive GmbH",
+    "Address": {
+      "_id": "11111111-1111-1111-1111-111111111111",
+      "_type": "ContactDetails",
+      "Street": "Automobilstrasse",
+      "HouseNumber": "1",
+      "ZipCode": "70469",
+      "City": "Stuttgart",
+      "Country": "Germany",
+      "Phone": "+49 711 123456",
+      "EMail": "quality@premium-auto.de"
+    }
+  },
+  "ClientOrderNumber": "PO-2024-FA-001",
+  "Contractor": {
+    "_id": "d1e2f3a4-5678-90bc-def0-234567890abc",
+    "_type": "TestingCenter",
+    "Location": {
+      "_id": "e1f2a3b4-5678-90cd-ef01-345678901bcd",
+      "_type": "Location",
+      "Identification": [
+        {
+          "Identifier": "LAB-VDA-275",
+          "Type": "Laboratory ID"
+        }
+      ],
+      "Name": "Materials Testing Laboratory GmbH",
+      "Address": {
+        "_id": "22222222-2222-2222-2222-222222222222",
+        "_type": "ContactDetails",
+        "Street": "Laborweg",
+        "HouseNumber": "42",
+        "ZipCode": "80333",
+        "City": "Munich",
+        "Country": "Germany",
+        "Phone": "+49 89 987654",
+        "EMail": "testing@mtl-lab.de"
+      }
+    },
+    "TestingManager": {
+      "_id": "f1a2b3c4-5678-90de-f012-456789012cde",
+      "_type": "Person",
+      "FirstName": "Maria",
+      "LastName": "Schmidt",
+      "Title": "Dr.",
+      "EMail": "m.schmidt@mtl-lab.de"
+    },
+    "Certifications": [
+      {
+        "_id": "a2b3c4d5-6789-01ef-0123-567890123def",
+        "_type": "Certification",
+        "AccreditationDate": {
+          "Date": "2023-01-15"
+        },
+        "Specification": {
+          "Type": "ISO/IEC",
+          "Number": "17025",
+          "IssueDate": "2017-11"
+        },
+        "ValidUntil": {
+          "Date": "2028-01-14"
+        }
+      }
+    ]
+  },
+  "LaboratoryOrderNumber": "LAB-2024-0142",
+  "OrderDate": {
+    "Date": "2024-03-01"
+  },
+  "OrderReference": "FA-Testing-Dashboard-Q1-2024",
+  "ReportDate": {
+    "Date": "2024-03-15"
+  },
+  "Signatory": "Dr. Maria Schmidt",
+  "ComponentMasters": [
+    {
+      "_id": "b2c3d4e5-6789-01ab-cdef-678901234567",
+      "_type": "ComponentMaster",
+      "Instances": [
+        {
+          "_id": "c3d4e5f6-7890-12bc-def0-789012345678",
+          "_type": "ComponentInstance",
+          "ProductionSite": {
+            "_id": "d4e5f6a7-8901-23cd-ef01-890123456789",
+            "_type": "Location",
+            "Identification": [
+              {
+                "Identifier": "PLANT-SUP-01",
+                "Type": "Plant ID"
+              }
+            ],
+            "Name": "Supplier Manufacturing Site"
+          },
+          "ProductionBatchNumber": "BATCH-2024-0312",
+          "ProductionDate": {
+            "Date": "2024-02-20"
+          },
+          "DateOfReceipt": {
+            "Date": "2024-02-28"
+          }
+        }
+      ],
+      "CustomerPartNumber": "DASH-TRIM-001",
+      "SupplierPartNumber": "T1-DT-2024-A",
+      "MaterialGroup": "Thermoplastic",
+      "MaterialClass": "PP/EPDM",
+      "MaterialName": "PP compound with EPDM",
+      "Comment": "Dashboard trim cover, moulded composite material"
+    }
+  ],
+  "TestSeries": [
+    {
+      "_id": "e4f5a6b7-8901-23de-f012-901234567890",
+      "_type": "TestSeries",
+      "Specification": {
+        "Authority": "VDA",
+        "Type": "VDA Recommendation",
+        "Number": "275",
+        "IssueDate": "2021-02",
+        "Title": "Determination of Formaldehyde release",
+        "FeatureText": "Variant A",
+        "FeatureList": ["A"]
+      },
+      "TestType": "VDA 275 Formaldehyde Emission",
+      "ComponentMasterID": "b2c3d4e5-6789-01ab-cdef-678901234567",
+      "TestingCenter": {
+        "_id": "d1e2f3a4-5678-90bc-def0-234567890abc",
+        "_type": "TestingCenter",
+        "Location": {
+          "_id": "e1f2a3b4-5678-90cd-ef01-345678901bcd",
+          "_type": "Location",
+          "Identification": [
+            {
+              "Identifier": "LAB-VDA-275",
+              "Type": "Laboratory ID"
+            }
+          ],
+          "Name": "Materials Testing Laboratory GmbH"
+        },
+        "TestingManager": {
+          "_id": "f1a2b3c4-5678-90de-f012-456789012cde",
+          "_type": "Person",
+          "FirstName": "Maria",
+          "LastName": "Schmidt",
+          "Title": "Dr."
+        },
+        "Certifications": [
+          {
+            "_id": "a2b3c4d5-6789-01ef-0123-567890123def",
+            "_type": "Certification",
+            "AccreditationDate": {
+              "Date": "2023-01-15"
+            },
+            "Specification": {
+              "Type": "ISO/IEC",
+              "Number": "17025",
+              "IssueDate": "2017-11"
+            }
+          }
+        ]
+      },
+      "NumberOfExecutions": 6,
+      "Assessment": "PASS",
+      "PredecessorId": null,
+      "SuccessorId": null,
+      "Comment": "No deviations from test procedure",
+      "Executions": [
+        {
+          "_id": "b7c8d9e0-1234-56bc-def0-234567890123",
+          "_type": "TestExecution",
+          "Designation": "Specimen 1",
+          "Numerator": 1,
+          "Specimen": {
+            "_id": "c8d9e0f1-2345-67cd-ef01-345678901234",
+            "_type": "Specimen",
+            "Designation": "Dashboard Trim - Specimen 1",
+            "ComponentInstanceID": "c3d4e5f6-7890-12bc-def0-789012345678",
+            "Extraction": {
+              "_id": "d9e0f1a2-3456-78de-f012-456789012340",
+              "_type": "Extraction",
+              "Position": "Center region, 50mm from edge",
+              "Method": "Cut with clean blade",
+              "Date": {
+                "Date": "2024-03-01"
+              },
+              "Specification": {
+                "Type": "DIN",
+                "Number": "55531",
+                "IssueDate": "2016-02"
+              },
+              "Comment": "Packaged in Al composite foil per DIN 55531, stored at 23C"
+            },
+            "AdditionalProperties": {
+              "_id": "e0f1a2b3-4567-89ef-0123-567890123450",
+              "_type": "InformationSet",
+              "Attributes": [
+                {"Property": "Length", "Value": 100, "Unit": "mm"},
+                {"Property": "Width", "Value": 40, "Unit": "mm"},
+                {"Property": "Thickness", "Value": 3.2, "Unit": "mm"},
+                {"Property": "Mass", "Value": 4.125, "Unit": "g", "Symbol": "m"}
+              ]
+            }
+          },
+          "MeasurementSystems": [
+            {
+              "_id": "d9e0f1a2-3456-78de-f012-456789012345",
+              "_type": "MeasurementSystem",
+              "Designation": "HPLC System 1",
+              "SystemType": "HPLC"
+            }
+          ],
+          "SingleResults": [
+            {
+              "_id": "e0f1a2b3-4567-89ef-0123-567890123456",
+              "_type": "SingleResultPoint",
+              "Property": "Peak Area",
+              "Symbol": "AS",
+              "Value": 485.32,
+              "Unit": "mAU*s"
+            },
+            {
+              "_id": "f1a2b3c4-5678-90ab-1234-678901234567",
+              "_type": "SingleResultPoint",
+              "Property": "Formaldehyde Emission",
+              "Symbol": "FA",
+              "Value": 5.24,
+              "Unit": "mg/kg atro"
+            }
+          ]
+        },
+        {
+          "_id": "a2b3c4d5-6789-01cd-ef01-789012345678",
+          "_type": "TestExecution",
+          "Designation": "Specimen 2",
+          "Numerator": 2,
+          "Specimen": {
+            "_id": "b3c4d5e6-7890-12de-f012-890123456789",
+            "_type": "Specimen",
+            "Designation": "Dashboard Trim - Specimen 2",
+            "ComponentInstanceID": "c3d4e5f6-7890-12bc-def0-789012345678",
+            "Extraction": {
+              "_id": "c4d5e6f7-8901-23ef-0123-901234567800",
+              "_type": "Extraction",
+              "Position": "Center region, 100mm from edge",
+              "Method": "Cut with clean blade",
+              "Date": {
+                "Date": "2024-03-01"
+              },
+              "Specification": {
+                "Type": "DIN",
+                "Number": "55531",
+                "IssueDate": "2016-02"
+              },
+              "Comment": "Packaged in Al composite foil per DIN 55531"
+            },
+            "AdditionalProperties": {
+              "_id": "d5e6f7a8-9012-34ab-1234-012345678900",
+              "_type": "InformationSet",
+              "Attributes": [
+                {"Property": "Length", "Value": 100, "Unit": "mm"},
+                {"Property": "Width", "Value": 40, "Unit": "mm"},
+                {"Property": "Thickness", "Value": 3.1, "Unit": "mm"},
+                {"Property": "Mass", "Value": 4.089, "Unit": "g", "Symbol": "m"}
+              ]
+            }
+          },
+          "MeasurementSystems": [
+            {
+              "_id": "d9e0f1a2-3456-78de-f012-456789012345",
+              "_type": "MeasurementSystem",
+              "Designation": "HPLC System 1",
+              "SystemType": "HPLC"
+            }
+          ],
+          "SingleResults": [
+            {
+              "_id": "c4d5e6f7-8901-23ef-0123-901234567890",
+              "_type": "SingleResultPoint",
+              "Property": "Peak Area",
+              "Symbol": "AS",
+              "Value": 472.18,
+              "Unit": "mAU*s"
+            },
+            {
+              "_id": "d5e6f7a8-9012-34ab-1234-012345678901",
+              "_type": "SingleResultPoint",
+              "Property": "Formaldehyde Emission",
+              "Symbol": "FA",
+              "Value": 5.11,
+              "Unit": "mg/kg atro"
+            }
+          ]
+        },
+        {
+          "_id": "e6f7a8b9-0123-45bc-2345-123456789012",
+          "_type": "TestExecution",
+          "Designation": "Specimen 3",
+          "Numerator": 3,
+          "Specimen": {
+            "_id": "f7a8b9c0-1234-56cd-3456-234567890123",
+            "_type": "Specimen",
+            "Designation": "Dashboard Trim - Specimen 3",
+            "ComponentInstanceID": "c3d4e5f6-7890-12bc-def0-789012345678",
+            "Extraction": {
+              "_id": "a8b9c0d1-2345-67de-4567-345678901200",
+              "_type": "Extraction",
+              "Position": "Center region",
+              "Method": "Cut with clean blade",
+              "Date": {
+                "Date": "2024-03-01"
+              },
+              "Specification": {
+                "Type": "DIN",
+                "Number": "55531",
+                "IssueDate": "2016-02"
+              }
+            },
+            "AdditionalProperties": {
+              "_id": "b9c0d1e2-3456-78ef-5678-456789012300",
+              "_type": "InformationSet",
+              "Attributes": [
+                {"Property": "Length", "Value": 100, "Unit": "mm"},
+                {"Property": "Width", "Value": 40, "Unit": "mm"},
+                {"Property": "Thickness", "Value": 3.2, "Unit": "mm"},
+                {"Property": "Mass", "Value": 4.156, "Unit": "g", "Symbol": "m"}
+              ]
+            }
+          },
+          "MeasurementSystems": [
+            {
+              "_id": "d9e0f1a2-3456-78de-f012-456789012345",
+              "_type": "MeasurementSystem",
+              "Designation": "HPLC System 1",
+              "SystemType": "HPLC"
+            }
+          ],
+          "SingleResults": [
+            {
+              "_id": "a8b9c0d1-2345-67de-4567-345678901234",
+              "_type": "SingleResultPoint",
+              "Property": "Peak Area",
+              "Symbol": "AS",
+              "Value": 498.67,
+              "Unit": "mAU*s"
+            },
+            {
+              "_id": "b9c0d1e2-3456-78ef-5678-456789012345",
+              "_type": "SingleResultPoint",
+              "Property": "Formaldehyde Emission",
+              "Symbol": "FA",
+              "Value": 5.31,
+              "Unit": "mg/kg atro"
+            }
+          ]
+        },
+        {
+          "_id": "c0d1e2f3-4567-89ab-6789-567890123456",
+          "_type": "TestExecution",
+          "Designation": "Specimen 4",
+          "Numerator": 4,
+          "Specimen": {
+            "_id": "d1e2f3a4-5678-90bc-7890-678901234567",
+            "_type": "Specimen",
+            "Designation": "Dashboard Trim - Specimen 4",
+            "ComponentInstanceID": "c3d4e5f6-7890-12bc-def0-789012345678",
+            "Extraction": {
+              "_id": "e2f3a4b5-6789-01cd-8901-789012345600",
+              "_type": "Extraction",
+              "Position": "Center region",
+              "Method": "Cut with clean blade",
+              "Date": {
+                "Date": "2024-03-01"
+              },
+              "Specification": {
+                "Type": "DIN",
+                "Number": "55531",
+                "IssueDate": "2016-02"
+              }
+            },
+            "AdditionalProperties": {
+              "_id": "f3a4b5c6-7890-12de-9012-890123456700",
+              "_type": "InformationSet",
+              "Attributes": [
+                {"Property": "Length", "Value": 100, "Unit": "mm"},
+                {"Property": "Width", "Value": 40, "Unit": "mm"},
+                {"Property": "Thickness", "Value": 3.0, "Unit": "mm"},
+                {"Property": "Mass", "Value": 4.012, "Unit": "g", "Symbol": "m"}
+              ]
+            }
+          },
+          "MeasurementSystems": [
+            {
+              "_id": "d9e0f1a2-3456-78de-f012-456789012345",
+              "_type": "MeasurementSystem",
+              "Designation": "HPLC System 1",
+              "SystemType": "HPLC"
+            }
+          ],
+          "SingleResults": [
+            {
+              "_id": "e2f3a4b5-6789-01cd-8901-789012345678",
+              "_type": "SingleResultPoint",
+              "Property": "Peak Area",
+              "Symbol": "AS",
+              "Value": 465.89,
+              "Unit": "mAU*s"
+            },
+            {
+              "_id": "f3a4b5c6-7890-12de-9012-890123456789",
+              "_type": "SingleResultPoint",
+              "Property": "Formaldehyde Emission",
+              "Symbol": "FA",
+              "Value": 5.15,
+              "Unit": "mg/kg atro"
+            }
+          ]
+        },
+        {
+          "_id": "a4b5c6d7-8901-23ef-0123-901234567890",
+          "_type": "TestExecution",
+          "Designation": "Specimen 5",
+          "Numerator": 5,
+          "Specimen": {
+            "_id": "b5c6d7e8-9012-34ab-1234-012345678901",
+            "_type": "Specimen",
+            "Designation": "Dashboard Trim - Specimen 5",
+            "ComponentInstanceID": "c3d4e5f6-7890-12bc-def0-789012345678",
+            "Extraction": {
+              "_id": "c6d7e8f9-0123-45bc-2345-123456789000",
+              "_type": "Extraction",
+              "Position": "Center region",
+              "Method": "Cut with clean blade",
+              "Date": {
+                "Date": "2024-03-01"
+              },
+              "Specification": {
+                "Type": "DIN",
+                "Number": "55531",
+                "IssueDate": "2016-02"
+              }
+            },
+            "AdditionalProperties": {
+              "_id": "d7e8f9a0-1234-56cd-3456-234567890100",
+              "_type": "InformationSet",
+              "Attributes": [
+                {"Property": "Length", "Value": 100, "Unit": "mm"},
+                {"Property": "Width", "Value": 40, "Unit": "mm"},
+                {"Property": "Thickness", "Value": 3.1, "Unit": "mm"},
+                {"Property": "Mass", "Value": 4.078, "Unit": "g", "Symbol": "m"}
+              ]
+            }
+          },
+          "MeasurementSystems": [
+            {
+              "_id": "d9e0f1a2-3456-78de-f012-456789012345",
+              "_type": "MeasurementSystem",
+              "Designation": "HPLC System 1",
+              "SystemType": "HPLC"
+            }
+          ],
+          "SingleResults": [
+            {
+              "_id": "c6d7e8f9-0123-45bc-2345-123456789012",
+              "_type": "SingleResultPoint",
+              "Property": "Peak Area",
+              "Symbol": "AS",
+              "Value": 479.45,
+              "Unit": "mAU*s"
+            },
+            {
+              "_id": "d7e8f9a0-1234-56cd-3456-234567890123",
+              "_type": "SingleResultPoint",
+              "Property": "Formaldehyde Emission",
+              "Symbol": "FA",
+              "Value": 5.21,
+              "Unit": "mg/kg atro"
+            }
+          ]
+        },
+        {
+          "_id": "e8f9a0b1-2345-67de-4567-345678901234",
+          "_type": "TestExecution",
+          "Designation": "Moisture Specimen",
+          "Numerator": 6,
+          "Specimen": {
+            "_id": "f9a0b1c2-3456-78ef-5678-456789012345",
+            "_type": "Specimen",
+            "Designation": "Dashboard Trim - Moisture",
+            "ComponentInstanceID": "c3d4e5f6-7890-12bc-def0-789012345678",
+            "Extraction": {
+              "_id": "a0b1c2d3-4567-89ab-6789-567890123400",
+              "_type": "Extraction",
+              "Position": "Adjacent to FA specimens",
+              "Method": "Cut with clean blade",
+              "Date": {
+                "Date": "2024-03-01"
+              },
+              "Specification": {
+                "Type": "DIN EN",
+                "Number": "322",
+                "IssueDate": "1993-08"
+              },
+              "Comment": "Moisture determination per DIN EN 322 at 103 degC"
+            },
+            "AdditionalProperties": {
+              "_id": "b1c2d3e4-5678-90bc-7890-678901234400",
+              "_type": "InformationSet",
+              "Attributes": [
+                {"Property": "Mass before drying", "Value": 4.102, "Unit": "g", "Symbol": "m1"},
+                {"Property": "Mass after drying", "Value": 4.086, "Unit": "g", "Symbol": "m0"}
+              ]
+            }
+          },
+          "MeasurementSystems": [
+            {
+              "_id": "b1c2d3e4-5678-90bc-7890-678901234500",
+              "_type": "MeasurementSystem",
+              "Designation": "Drying Oven",
+              "SystemType": "Drying Oven"
+            },
+            {
+              "_id": "c2d3e4f5-6789-01cd-8901-789012345600",
+              "_type": "MeasurementSystem",
+              "Designation": "Precision Balance",
+              "SystemType": "Balance"
+            }
+          ],
+          "SingleResults": [
+            {
+              "_id": "d3e4f5a6-7890-12de-9012-890123456700",
+              "_type": "SingleResultPoint",
+              "Property": "Moisture Content",
+              "Symbol": "H",
+              "Value": 0.39,
+              "Unit": "%"
+            }
+          ]
+        }
+      ],
+      "ConsolidatedCharacteristicValues": [
+        {
+          "_id": "b1c2d3e4-5678-90bc-7890-678901234567",
+          "_type": "ConsolidatedCharacteristicValue",
+          "Property": "Formaldehyde Emission",
+          "Symbol": "FA",
+          "Value": 5.20,
+          "Unit": "mg/kg atro",
+          "Aggregation": "ArithmeticMean",
+          "SingleResultIDs": [
+            "f1a2b3c4-5678-90ab-1234-678901234567",
+            "d5e6f7a8-9012-34ab-1234-012345678901",
+            "b9c0d1e2-3456-78ef-5678-456789012345",
+            "f3a4b5c6-7890-12de-9012-890123456789",
+            "d7e8f9a0-1234-56cd-3456-234567890123"
+          ],
+          "Comment": "Mean of 5 measurements"
+        },
+        {
+          "_id": "c2d3e4f5-6789-01cd-8901-789012345678",
+          "_type": "ConsolidatedCharacteristicValue",
+          "Property": "Moisture Content",
+          "Symbol": "H",
+          "Value": 0.39,
+          "Unit": "%",
+          "Aggregation": "Single"
+        }
+      ],
+      "TargetCharacteristicValues": [
+        {
+          "_id": "d3e4f5a6-7890-12de-9012-890123456789",
+          "_type": "ConsolidatedCharacteristicValue",
+          "Property": "Formaldehyde Emission",
+          "Symbol": "FA",
+          "Value": 10.0,
+          "Unit": "mg/kg atro",
+          "Aggregation": "Limit",
+          "CriterionType": "Maximum"
+        }
+      ]
+    }
+  ]
+}
