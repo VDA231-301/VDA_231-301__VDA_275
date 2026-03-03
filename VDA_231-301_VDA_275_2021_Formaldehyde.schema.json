@@ -1,11 +1,11 @@
 {
-  "$id": "https://vda231-301.github.io/schemas/VDA_275/VDA_231-301_VDA_275_2021_Formaldehyde_v0.1.0.schema.json",
+  "$id": "https://vda231-301.github.io/schemas/VDA_275/VDA_231-301_VDA_275_2021_Formaldehyde_v1.0.0.schema.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "VDA 275 Formaldehyde Emission Testing Schema",
   "description": "JSON Schema for VDA 275 - Moulded Composites and Fleeces for Vehicles - Determination of Formaldehyde release using the modified flask method. Supports both Variant A (DNPH/HPLC) and Variant B (Acetylacetone/UV-Vis). Test report requirements per VDA 275 Section 9.",
   "allOf": [
     {
-      "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json"
+      "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json"
     },
     {
       "properties": {
@@ -33,7 +33,7 @@
         "$ref": "#/$defs/VDA275.TestSeries"
       },
       "else": {
-        "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.TestSeries"
+        "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.TestSeries"
       }
     },
     "VDA275.TestSeries": {
@@ -41,7 +41,7 @@
       "description": "Test series for VDA 275 formaldehyde emission testing. Test variant (A or B) is specified via Specification.FeatureText and FeatureList. Test report requirements per VDA 275 Section 9.",
       "properties": {
         "_id": {
-          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.Identifier"
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.Identifier"
         },
         "_type": {
           "const": "TestSeries"
@@ -54,10 +54,10 @@
           "const": "VDA 275 Formaldehyde Emission"
         },
         "ComponentMasterID": {
-          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.Identifier"
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.Identifier"
         },
         "AdditionalInformation": {
-          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.InformationSet",
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.InformationSet",
           "description": "Optional additional test parameters (calibration data, instrument settings, etc.)"
         },
         "NumberOfExecutions": {
@@ -73,7 +73,7 @@
         "PredecessorId": {
           "oneOf": [
             {
-              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.Identifier"
+              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.Identifier"
             },
             {
               "type": "null"
@@ -83,7 +83,7 @@
         "SuccessorId": {
           "oneOf": [
             {
-              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.Identifier"
+              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.Identifier"
             },
             {
               "type": "null"
@@ -91,11 +91,11 @@
           ]
         },
         "TestingCenter": {
-          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.TestingCenter",
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.TestingCenter",
           "description": "Testing laboratory with name, address, and responsible person (Section 9 requirements)"
         },
         "Comment": {
-          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.RestrictedText",
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.RestrictedText",
           "description": "Deviations from test procedure and peculiarities during test (Section 9)"
         },
         "Executions": {
@@ -145,19 +145,19 @@
           "const": "VDA"
         },
         "Type": {
-          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.RestrictedString"
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.RestrictedString"
         },
         "Number": {
           "const": "275"
         },
         "SubNumber": {
-          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.RestrictedString"
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.RestrictedString"
         },
         "IssueDate": {
-          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.DateMonth"
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.DateMonth"
         },
         "Title": {
-          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.LongString"
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.LongString"
         },
         "FeatureText": {
           "type": "string",
@@ -192,34 +192,34 @@
       "description": "Test execution for VDA 275 with required Extraction information (sampling/packaging timing per Section 9)",
       "properties": {
         "_id": {
-          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.Identifier"
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.Identifier"
         },
         "_type": {
           "const": "TestExecution"
         },
         "Designation": {
-          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.RestrictedString"
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.RestrictedString"
         },
         "Numerator": {
           "type": "integer",
           "minimum": 1
         },
         "Tester": {
-          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.Person"
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.Person"
         },
         "StartTime": {
-          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.Date"
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.Date"
         },
         "MeasurementSystems": {
           "type": "array",
           "items": {
-            "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.MeasurementSystem"
+            "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.MeasurementSystem"
           }
         },
         "RawData": {
           "type": "array",
           "items": {
-            "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.InformationSet"
+            "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.InformationSet"
           }
         },
         "SingleResults": {
@@ -233,7 +233,7 @@
           "$ref": "#/$defs/VDA275.Specimen"
         },
         "TestParameters": {
-          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.InformationSet"
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.InformationSet"
         }
       },
       "required": [
@@ -252,29 +252,29 @@
       "description": "VDA 275 specimen with required Extraction (sampling/packaging timing and details per Section 9)",
       "properties": {
         "_id": {
-          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.Identifier"
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.Identifier"
         },
         "_type": {
           "const": "Specimen"
         },
         "Designation": {
-          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.LongString"
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.LongString"
         },
         "Flagging": {
-          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.RestrictedString"
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.RestrictedString"
         },
         "Comment": {
-          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.RestrictedText"
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.RestrictedText"
         },
         "ComponentInstanceID": {
-          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.Identifier"
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.Identifier"
         },
         "Attachment": {
-          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.Attachment",
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.Attachment",
           "description": "Photo documentation if requested by client (Section 9)"
         },
         "AdditionalProperties": {
-          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.InformationSet",
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.InformationSet",
           "description": "Specimen dimensions (Length, Width, Thickness), Mass, Type"
         },
         "Extraction": {
@@ -284,7 +284,7 @@
         "ProcessHistory": {
           "type": "array",
           "items": {
-            "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.ProcessStep"
+            "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.ProcessStep"
           },
           "description": "Special features of production (additional drying, changed parameters - Section 9)"
         }
@@ -303,33 +303,33 @@
       "description": "Extraction/sampling information with required Date (Section 9: timing of sampling and packaging)",
       "properties": {
         "_id": {
-          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.Identifier"
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.Identifier"
         },
         "_type": {
           "const": "Extraction"
         },
         "Position": {
-          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.RestrictedString",
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.RestrictedString",
           "description": "Sampling position on the component"
         },
         "Specification": {
-          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.Specification",
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.Specification",
           "description": "Sampling/packaging specification"
         },
         "Method": {
-          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.RestrictedString",
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.RestrictedString",
           "description": "Sampling method"
         },
         "Date": {
-          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.Date",
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.Date",
           "description": "Required: Date of sampling/packaging (Section 9)"
         },
         "Comment": {
-          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.RestrictedText",
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.RestrictedText",
           "description": "Details of packaging, storage and transport (Section 9)"
         },
         "Attachment": {
-          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.Attachment"
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.Attachment"
         }
       },
       "required": [
@@ -347,12 +347,12 @@
       "description": "Single result point for VDA 275 measurements (same format for both variants)",
       "allOf": [
         {
-          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.InformationPoint"
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.InformationPoint"
         },
         {
           "properties": {
             "_id": {
-              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.Identifier"
+              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.Identifier"
             },
             "_type": {
               "const": "SingleResultPoint"
@@ -377,13 +377,13 @@
               "minimum": 0
             },
             "Unit": {
-              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.Unit"
+              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.Unit"
             },
             "Comment": {
-              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.RestrictedText"
+              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.RestrictedText"
             },
             "Attachment": {
-              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.Attachment"
+              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.Attachment"
             }
           }
         }
@@ -396,12 +396,12 @@
       "description": "Consolidated result: FA emission (mg/kg atro) or Moisture content (%) per Section 9",
       "allOf": [
         {
-          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.InformationPoint"
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.InformationPoint"
         },
         {
           "properties": {
             "_id": {
-              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.Identifier"
+              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.Identifier"
             },
             "_type": {
               "const": "ConsolidatedCharacteristicValue"
@@ -423,22 +423,22 @@
               "enum": ["mg/kg atro", "%"]
             },
             "Aggregation": {
-              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.RestrictedString"
+              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.RestrictedString"
             },
             "SingleResultIDs": {
               "type": "array",
               "items": {
-                "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.Identifier"
+                "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.Identifier"
               }
             },
             "Comment": {
-              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.RestrictedText"
+              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.RestrictedText"
             },
             "CriterionType": {
-              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.RestrictedString"
+              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.RestrictedString"
             },
             "Attachment": {
-              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.Attachment"
+              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.Attachment"
             }
           }
         }
@@ -458,12 +458,12 @@
       "description": "Predetermined limit value for FA emission (Section 9 requirement)",
       "allOf": [
         {
-          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.InformationPoint"
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.InformationPoint"
         },
         {
           "properties": {
             "_id": {
-              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.Identifier"
+              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.Identifier"
             },
             "_type": {
               "const": "ConsolidatedCharacteristicValue"
@@ -482,16 +482,16 @@
               "const": "mg/kg atro"
             },
             "Aggregation": {
-              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.RestrictedString"
+              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.RestrictedString"
             },
             "CriterionType": {
-              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.RestrictedString"
+              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.RestrictedString"
             },
             "Comment": {
-              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.RestrictedText"
+              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.RestrictedText"
             },
             "Attachment": {
-              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v0.2.0.schema.json#/$defs/Generic.Attachment"
+              "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.Attachment"
             }
           }
         }
